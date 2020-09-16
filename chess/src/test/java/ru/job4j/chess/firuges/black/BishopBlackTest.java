@@ -14,17 +14,23 @@ public class BishopBlackTest {
         BishopBlack bishopblack = new BishopBlack(Cell.H3);
         assertThat(bishopblack.position(), is(Cell.H3));
     }
+
     @Test
     public void whenCopy() {
         BishopBlack bishopblack = new BishopBlack(Cell.H6);
         assertThat(bishopblack.position(), is(Cell.H6));
     }
-@Test
-    public void whenWay() {
-    BishopBlack bishopBlack = new BishopBlack(Cell.C1);
-    Cell[] expected = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
-    Cell[] values = bishopBlack.way(bishopBlack.position(),Cell.G5);
-  assertArrayEquals(expected, values);
 
-}
+    @Test
+    public void whenWay() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.C1);
+        Cell[] expected = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
+        Cell[] values = bishopBlack.way(bishopBlack.position(), Cell.G5);
+        assertArrayEquals(expected, values);
+    }
+    @Test (expected = IllegalStateException.class)
+public void whenException() {
+        BishopBlack bishopblack = new BishopBlack(Cell.C1);
+        bishopblack.way(bishopblack.position(), Cell.B5);
+    }
 }
