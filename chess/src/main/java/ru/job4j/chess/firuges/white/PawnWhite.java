@@ -14,16 +14,18 @@ public class PawnWhite implements Figure {
     private final Cell position;
 
     public PawnWhite(final Cell ps) {
+
         position = ps;
     }
 
     @Override
     public Cell position() {
+
         return position;
     }
 
     @Override
-    public Cell[] way(Cell dest) {
+    public Cell[] way(Cell source,Cell dest) {
         return new Cell[] {
                 dest
         };
