@@ -18,7 +18,7 @@ public final class Logic {
         if (!free(steps)) {
             throw new OccupiedCellException();
         }
-        free(steps);
+
         figures[index] = figures[index].copy(dest);
     }
 
