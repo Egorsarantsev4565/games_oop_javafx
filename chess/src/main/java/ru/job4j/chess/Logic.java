@@ -28,6 +28,7 @@ public final class Logic {
             for (Figure figure : figures) {
                 if (figure != null && step.equals(figure.position())) {
                     free = false;
+                    break;
                 }
             }
         }
